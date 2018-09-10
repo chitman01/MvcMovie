@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcMovie.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,19 @@ namespace MvcMovie.Controllers
 {
     public class HomeController : Controller
     {
+        private MovieDBContext db = new MovieDBContext();
+
         public ActionResult Index()
         {
+            var GenreLst = new List<string>();
 
-            return View();
+            var GenreQry = from d in db.Movies
+                           orderby d.Genre
+                           select d.Genre;
+            var movies = from m in db.Movies
+                         select m;
+
+            return View(movies);
         }
 
         public ActionResult About()

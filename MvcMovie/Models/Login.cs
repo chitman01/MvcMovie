@@ -10,25 +10,29 @@ namespace MvcMovie.Models
     public class Login
     {
 
+
         public int ID { get; set; }
 
         //[RegularExpression(@"^[A-Z]+[a-zA-Z'\s]+[0-9]*$")]
         [RegularExpression(@"^[a-zA-Z][a-zA-Z0-9_]+$")]
-        [MinLength(6)]
+        [MinLength(5)]
         [MaxLength(15)]
-        public string UserName { get; set; }
+        public string Username { get; set; }
 
-        [RegularExpression(@"^[a-zA-Z][a-zA-Z0-9_]+$")]
-        [MinLength(6)]
-        [MaxLength(15)]
-        public string UserPassword { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
 
+        /*
+        [Display(Name = "Remember on this computer")]
+        public bool RememberMe { get; set; }
+        */
         [StringLength(40)]
         public string Email { get; set; }
 
         [RegularExpression(@"^[0-9]*$")]
         [StringLength(4)]
-        public string UserPasswordSecurity { get; set; }
+        public string PasswordSecurity { get; set; }
 
         [Display(Name = "Release Date")]
         [DataType(DataType.Date)]

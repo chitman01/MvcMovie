@@ -23,18 +23,13 @@ namespace MvcMovie.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(Login logins)
         {
-            /*
-            var UserNameList = new List<string>();
-            var UserNameQry = from d in db.Logins
-                              select d.UserName;
-               */
             if (ModelState.IsValid)     /*more detail see https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ */
             {
-                var obj = db.Logins.Where(a => a.UserName.Equals(logins.UserName) && a.UserPassword.Equals(logins.UserPassword)).FirstOrDefault();
+                var obj = db.Logins.Where(a => a.Username.Equals(logins.Username) && a.Password.Equals(logins.Password)).FirstOrDefault();
                 if(obj != null)
                 {
                     Session["ID"] = obj.ID.ToString();
-                    Session["UserName"] = obj.UserName.ToString();
+                    Session["Username"] = obj.Username.ToString();
                     //Session["UserPassword"] = obj.UserPassword.ToString();
                     return RedirectToAction("UserDashBoard");
                 }

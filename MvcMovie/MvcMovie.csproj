@@ -160,10 +160,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809050952002_Initial.cs" />
-    <Compile Include="Migrations\201809050952002_Initial.Designer.cs">
-      <DependentUpon>201809050952002_Initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201809051008479_Rating.cs" />
     <Compile Include="Migrations\201809051008479_Rating.Designer.cs">
       <DependentUpon>201809051008479_Rating.cs</DependentUpon>
@@ -183,6 +179,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Migrations\201809050858591_InitialCreate.cs" />
     <Compile Include="Migrations\201809050858591_InitialCreate.Designer.cs">
@@ -275,9 +272,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809050858591_InitialCreate.resx">
       <DependentUpon>201809050858591_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809050952002_Initial.resx">
-      <DependentUpon>201809050952002_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809051008479_Rating.resx">
       <DependentUpon>201809051008479_Rating.cs</DependentUpon>
