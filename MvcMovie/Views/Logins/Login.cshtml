@@ -1,0 +1,98 @@
+﻿
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@model MvcMovie.Models.Login
+
+@using (Html.BeginForm("Login", "Logins", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Mvc Simple Login Application Demo</legend>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (@ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+        <table>
+            <tr>
+                <td>@Html.LabelFor(a => a.UserName)</td>
+                <td>@Html.TextBoxFor(a => a.UserName)</td>
+                <td>@Html.ValidationMessageFor(a => a.UserName)</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(a => a.UserPassword)
+                </td>
+                <td>
+                    @Html.PasswordFor(a => a.UserPassword)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(a => a.UserPassword)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+}
+
+@*
+
+    <style>
+        h2, label {
+            color: aliceblue
+        }
+
+        .background {
+            margin: 100px 0px 100px 0px;
+        }
+
+        .box {
+            width: 450px;
+            padding: 10px;
+            margin: auto;
+            border-radius: 8px;
+            border: solid gray;
+            background: rgb(75, 82, 94)
+        }
+
+        .center {
+            margin: auto;
+            width: 100%;
+            border: 3px;
+            padding: 10px;
+            font-size: 17px;
+        }
+    </style>
+    <div class="background">
+        <div class="box">
+            <h2 align="center">Login</h2>
+            <div class="center">
+                <label>User :</label>
+                <input type="text" id="user" name="fileUpload" class="form-control" placeholder="User" />
+            </div>
+            <div class="center">
+                <label>Password :</label>
+                <input type="password" id="password" name="fileUpload" class="form-control" placeholder="Password" />
+            </div>
+            <div class="center" align="center">
+                <button type="button" class="btn btn-success">SIGN IN</button>
+
+            </div>
+        </div>
+    </div>
+
+*@
